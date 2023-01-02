@@ -1,3 +1,38 @@
+The environment consists of a portfolio of buyable securities with a certain amount of money invested in each. The agent
+can make trades by adjusting the proportions of money invested in each security. The environment also has a client with
+an age and a target spending rate. The goal of the agent is to maximize the value of the portfolio while ensuring that
+the client does not run out of money before reaching a certain age.
+
+The observation space consists of the client's age, the value of the portfolio, the target spending rate, and the
+proportions of the portfolio invested in each security. The action space consists of the proportions of the portfolio
+to invest in each security.
+
+Attributes
+----------
+count_buyable_securities : int
+    The number of buyable securities in the portfolio.
+observation_space : gym.spaces.Box
+    The observation space for the environment.
+action_space : gym.spaces.Box
+    The action space for the environment.
+stepsPerYear : int
+    The number of steps per year in the environment.
+min_start_age : float
+    The minimum starting age for the client.
+max_start_age : float
+    The maximum starting age for the client.
+age_step_size : float
+    The size of each age step in the environment.
+start_age : float
+    The starting age for the client.
+secExpRet : numpy.ndarray
+    The expected return for each security.
+secExpCov : numpy.ndarray
+    The expected covariance for each security.
+state : numpy.ndarray
+    The current state of the environment.
+"""
+
 import numpy as np
 import gym
 from gym import spaces
